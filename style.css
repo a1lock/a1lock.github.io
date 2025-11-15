@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+}
+
+/* стили для всего текста на странице */
+body {
+    font-family: "Stack Sans Text", sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #000;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header, .main, .footer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* хедер */
+.header {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.logo {
+    margin: 0;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.head_link {
+    margin-right: 25px; 
+    color: #333;
+    font-size: 16px;
+}
+
+.head_link:hover {
+    color: #e6492d;
+}
+
+/* мейн */
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.about-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 0; 
+    margin-bottom: 25px;
+}
+
+.about-text, .advantages-text {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.advantages-list {
+    padding-left: 10px;
+}
+
+/* стили для таблицы */
+.dishes-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.dishes-table th, .dishes-table td {
+    border: none;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0; 
+}
+
+.dishes-table th {
+    font-weight: 700;
+}
+
+
+/* футер*/
+.footer {
+    margin-top: 40px;
+    background-color: black;
+    color: white;
+    text-align: left; 
+    padding: 30px;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+}
