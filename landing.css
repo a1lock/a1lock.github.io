@@ -1,0 +1,194 @@
+/* --- landing.css --- */
+
+/* Базовые настройки */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #212529;
+}
+
+/* --- НАВИГАЦИЯ --- */
+.navbar-brand {
+    font-size: 32px;
+    font-weight: 700;
+    color: #000 !important;
+}
+
+.nav-link {
+    font-size: 16px;
+    color: #333 !important;
+    position: relative; /* Для позиционирования подчеркивания */
+    transition: color 0.3s;
+}
+
+/* Анимация подчеркивания ссылки при наведении */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: tomato;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%; /* Линия растягивается на всю ширину */
+}
+
+.nav-link:hover {
+    color: tomato !important;
+}
+
+/* --- КНОПКИ --- */
+/* Общий стиль для плавности */
+.btn {
+    border-radius: 12px;
+    padding: 12px 30px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden; /* Чтобы блик не вылезал */
+}
+
+/* Основная кнопка */
+.btn-tomato {
+    background-color: tomato;
+    color: white;
+    border: 2px solid tomato;
+    box-shadow: 0 4px 6px rgba(255, 99, 71, 0.3); /* Тень */
+}
+
+/* Эффект нажатия и наведения */
+.btn-tomato:hover {
+    background-color: #ff4500; /* Чуть темнее */
+    border-color: #ff4500;
+    transform: translateY(-2px); /* Кнопка "всплывает" */
+    box-shadow: 0 8px 15px rgba(255, 99, 71, 0.4);
+}
+
+.btn-tomato:active {
+    transform: translateY(0); /* Вдавливание при клике */
+    box-shadow: 0 2px 4px rgba(255, 99, 71, 0.3);
+}
+
+/* Второстепенная кнопка */
+.btn-outline-tomato {
+    background-color: transparent;
+    color: tomato;
+    border: 2px solid tomato;
+}
+
+.btn-outline-tomato:hover {
+    background-color: tomato;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+/* --- HERO СЕКЦИЯ --- */
+.hero-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #fff0ed 100%); /* Легкий градиент */
+}
+
+.hero-img {
+    max-width: 100%;
+    border-radius: 35px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    transition: transform 0.5s ease;
+}
+
+/* Легкое покачивание картинки при наведении */
+.hero-img:hover {
+    transform: scale(1.02) rotate(1deg);
+}
+
+/* --- БЛОКИ ПРЕИМУЩЕСТВ (КАРТОЧКИ) --- */
+.feature-card {
+    border-radius: 20px;
+    background-color: #fff;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Пружинистая анимация */
+    border: 1px solid transparent; /* Чтобы не прыгало при добавлении бордера */
+}
+
+/* При наведении на карточку */
+.feature-card:hover {
+    background-color: #fff;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1); /* Тень */
+    transform: translateY(-10px); /* Поднимается вверх */
+    border-color: rgba(255, 99, 71, 0.2);
+}
+
+.feature-icon {
+    font-size: 3.5rem;
+    color: tomato;
+    margin-bottom: 1.5rem;
+    transition: transform 0.4s ease;
+}
+
+/* При наведении на карточку, иконка увеличивается */
+.feature-card:hover .feature-icon {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* --- CTA СЕКЦИЯ --- */
+.cta-section {
+    background: linear-gradient(45deg, tomato, #ff6b6b);
+    color: white;
+    padding: 80px 0;
+}
+
+/* --- ФОРМА КОНТАКТОВ --- */
+/* Стилизация полей ввода */
+.form-control, .form-select {
+    border-radius: 10px;
+    border: 2px solid #eee;
+    padding: 12px;
+    transition: all 0.3s;
+}
+
+/* Фокус на поле ввода (когда кликнули) */
+.form-control:focus, .form-select:focus {
+    border-color: tomato; /* Оранжевая рамка */
+    box-shadow: 0 0 0 4px rgba(255, 99, 71, 0.15); /* Оранжевое свечение */
+    outline: none;
+}
+
+/* Если поле заполнено валидно (псевдокласс :valid работает, если есть required) */
+/* Можно добавить input:valid { border-color: green; } если хочется */
+
+/* --- ФУТЕР --- */
+footer {
+    background-color: #1a1a1a;
+    color: #bbb;
+    padding: 40px 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 2px;
+}
+
+/* Подчеркивание ссылки в футере */
+footer a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: tomato;
+    transition: width 0.3s;
+}
+
+footer a:hover {
+    color: tomato;
+}
+
+footer a:hover::before {
+    width: 100%;
+}

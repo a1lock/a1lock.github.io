@@ -1,0 +1,341 @@
+.dishes_div {
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px; 
+}
+
+.dish {
+    padding: 30px 40px; 
+    background-color: white;
+    border-radius: 35px;
+    cursor: pointer;
+    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+    display: flex;
+    flex-direction: column;
+}
+
+.dish:hover {
+    border: 2px solid tomato;
+    padding: 28px 38px; 
+}
+
+.dish_image {
+    width: 100%; 
+    height: auto;
+    border-radius: 35px; 
+    margin-bottom: 10px; 
+}
+
+.dish_price {
+    font-size: 22px; 
+    font-weight: 700;
+    margin: 5px 0;
+}
+
+.dish_name {
+    font-size: 18px; 
+    font-weight: 500;
+    margin: 5px 0 10px 0;
+    flex-grow: 1; 
+}
+
+.dish_weight {
+    color: #888; 
+    font-size: 14px;
+    margin: 0 0 15px 0;
+}
+
+.dish_button {
+    background-color: #f1eee9; 
+    padding: 10px 30px; 
+    border-radius: 10px; 
+    margin-top: 15px; 
+    cursor: pointer; 
+    border: none;
+    font-weight: 700;
+    color: #000;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+.dish:hover .dish_button {
+    background-color: tomato; 
+    color: white;
+}
+
+
+
+.order .title {
+    text-align: center;
+    margin-top: 60px;
+}
+
+/* форма */
+.order_form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* подзаголовки "ваш заказ" и "ваши данные" */
+.order_subtitle {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.input_label {
+    display: block; /* Занимает всю строку */
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* общие стили для всех полей ввода */
+.input_field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit; /* наследование шрифта Montserrat */
+    font-size: 14px;
+}
+
+/* убираем возможность пользователю менять размер textarea */
+textarea.input_field {
+    resize: none;
+}
+
+/* для чекбокса */
+.checkbox_wrapper {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.radio_wrapper {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.radio_wrapper div {
+    margin-bottom: 5px;
+}
+
+/* текст под полем времени */
+.info_text {
+    font-size: 12px;
+    color: #666;
+    margin-top: -15px;
+    margin-bottom: 20px;
+}
+
+/* кнопки формы */
+.buttons_wrapper {
+    display: flex;
+    gap: 20px; /* расстояние между кнопками */
+}
+
+/* общие стили кнопок формы */
+.form_btn {
+    padding: 12px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    width: 100%;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* кнопка "Сбросить" */
+.reset_btn {
+    background-color: transparent;
+    border: 1px solid #333;
+    color: #333;
+}
+
+.reset_btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* кнопка "Отправить" */
+.submit_btn {
+    background-color: transparent;
+    border: 1px solid tomato;
+    color: tomato;
+}
+
+.submit_btn:hover {
+    background-color: tomato;
+    color: white;
+}
+
+.order_item {
+    margin-bottom: 15px;
+}
+
+.order_item_title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #e6492d;
+    margin: 0 0 5px 0;
+}
+
+.order_item_info {
+    font-size: 14px;
+    margin: 0;
+    color: #000;
+}
+
+/* стиль для сообщения "Ничего не выбрано" */
+#nothing_selected {
+    font-size: 14px;
+    color: #333;
+}
+
+.combos_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.combo_item {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* анимация для transform */
+    transition: transform 0.3s ease; 
+}
+
+/* эффект при наведении из задания */
+.combo_item:hover {
+    transform: scale(1.05) translateY(-5px);
+}
+
+.combo_icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.combo_icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.combo_icon:hover {
+    transform: scale(1.2);
+}
+
+.combo_icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-bottom: 5px;
+}
+
+.combo_icon p {
+    font-size: 12px;
+    margin: 0;
+}
+
+.combo_label {
+    font-weight: 700;
+    font-size: 16px;
+    margin: 0;
+}
+
+.combo_desc {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* --- СТИЛИ ДЛЯ УВЕДОМЛЕНИЯ (МОДАЛКА) --- */
+
+/* затемнение фона */
+.notification-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* само окно */
+.notification-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.notification-text {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.notification-btn {
+    background-color: white;
+    border: 2px solid #e6492d;
+    color: #e6492d;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+/* ховер для кнопки уведомления */
+.notification-btn:hover {
+    background-color: #e6492d;
+    color: white;
+}
+
+
+/* адаптив */
+@media (max-width: 800px) {
+    .dishes_div, .combos_container {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .order_form {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .logo {
+        text-align: center;
+    }
+    .title {
+        text-align: center;
+    }
+    .dishes_div, .combos_container {
+        grid-template-columns: 1fr; 
+    }
+    .order_form {
+        grid-template-columns: 1fr;
+    }
+}

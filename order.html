@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Construct - Собрать ланч</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="order.css"> 
+</head>
+<body>
+
+    <header class="header">
+        <h1 class="logo">Food Construct</h1>
+        <nav class="header_links">
+            <a class="head_link" href="landing.html">Главная</a>
+            <a class="head_link" href="index.html">О нас</a>
+            <a class="head_link active" href="order.html">Собрать ланч</a>
+            <a class="head_link" href="checkout.html">Оформить заказ</a>
+            <a class="head_link" href="orders.html">Заказы</a>
+            <a class="head_link" href="#contacts">Контакты</a>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- Секция КОМБО -->
+        <section class="combos">
+            <h2 class="title">Доступные для заказа комбо</h2>
+            <div class="combos_container">
+                <!-- Комбо 1 -->
+                <div class="combo_item">
+                    <div class="combo_icons">
+                        <div class="combo_icon"><img src="/img/soup.png" alt="Суп"><p>Суп</p></div>
+                        <div class="combo_icon"><img src="/img/main.png" alt="Главное"><p>Главное блюдо</p></div>
+                        <div class="combo_icon"><img src="/img/salad.png" alt="Салат"><p>Салат</p></div>
+                        <div class="combo_icon"><img src="/img/drink.png" alt="Напиток"><p>Напиток</p></div>
+                    </div>
+                    <p class="combo_label">Комбо 1</p>
+                </div>
+                <!-- ... остальные комбо (можно оставить как было) ... -->
+                <div class="combo_item">
+                    <div class="combo_icons">
+                        <div class="combo_icon"><img src="/img/soup.png" alt="Суп"><p>Суп</p></div>
+                        <div class="combo_icon"><img src="/img/main.png" alt="Главное"><p>Главное блюдо</p></div>
+                        <div class="combo_icon"><img src="/img/drink.png" alt="Напиток"><p>Напиток</p></div>
+                    </div>
+                    <p class="combo_label">Комбо 2</p>
+                </div>
+                <div class="combo_item">
+                    <div class="combo_icons">
+                        <div class="combo_icon"><img src="/img/soup.png" alt="Суп"><p>Суп</p></div>
+                        <div class="combo_icon"><img src="/img/salad.png" alt="Салат"><p>Салат</p></div>
+                        <div class="combo_icon"><img src="/img/drink.png" alt="Напиток"><p>Напиток</p></div>
+                    </div>
+                    <p class="combo_label">Комбо 3</p>
+                </div>
+                <div class="combo_item">
+                    <div class="combo_icons">
+                        <div class="combo_icon"><img src="/img/main.png" alt="Главное"><p>Главное блюдо</p></div>
+                        <div class="combo_icon"><img src="/img/salad.png" alt="Салат"><p>Салат</p></div>
+                        <div class="combo_icon"><img src="/img/drink.png" alt="Напиток"><p>Напиток</p></div>
+                    </div>
+                    <p class="combo_label">Комбо 4</p>
+                </div>
+                <div class="combo_item">
+                    <div class="combo_icons">
+                        <div class="combo_icon"><img src="/img/main.png" alt="Главное"><p>Главное блюдо</p></div>
+                        <div class="combo_icon"><img src="/img/drink.png" alt="Напиток"><p>Напиток</p></div>
+                    </div>
+                    <p class="combo_label">Комбо 5</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секции блюд (Супы, Главное, Салаты, Напитки, Десерты) -->
+        <!-- Структура остается прежней, ID контейнеров важны для скрипта -->
+        <section class="dishes">
+            <h2 class="title">Выберите суп</h2>
+            <div class="filters">
+                <button class="filter-btn" data-kind="fish">Рыбный</button>
+                <button class="filter-btn" data-kind="meat">Мясной</button>
+                <button class="filter-btn" data-kind="veg">Вегетарианский</button>
+            </div>
+            <div class="dishes_div" id="soup_container"></div>
+        </section>
+
+        <section class="dishes">
+            <h2 class="title">Выберите главное блюдо</h2>
+            <div class="filters">
+                <button class="filter-btn" data-kind="fish">Рыбное</button>
+                <button class="filter-btn" data-kind="meat">Мясное</button>
+                <button class="filter-btn" data-kind="veg">Вегетарианское</button>
+            </div>
+            <div class="dishes_div" id="main_container"></div>
+        </section>
+
+        <section class="dishes">
+            <h2 class="title">Выберите салат или стартер</h2>
+            <div class="filters">
+                <button class="filter-btn" data-kind="fish">Рыбный</button>
+                <button class="filter-btn" data-kind="meat">Мясной</button>
+                <button class="filter-btn" data-kind="veg">Вегетарианский</button>
+            </div>
+            <div class="dishes_div" id="salad_container"></div>
+        </section>
+
+        <section class="dishes">
+            <h2 class="title">Выберите напиток</h2>
+            <div class="filters">
+                <button class="filter-btn" data-kind="cold">Холодный</button>
+                <button class="filter-btn" data-kind="hot">Горячий</button>
+            </div>
+            <div class="dishes_div" id="drink_container"></div>
+        </section>
+
+        <section class="dishes">
+            <h2 class="title">Выберите десерт</h2>
+            <div class="filters">
+                <button class="filter-btn" data-kind="small">Маленькая порция</button>
+                <button class="filter-btn" data-kind="medium">Средняя порция</button>
+                <button class="filter-btn" data-kind="large">Большая порция</button>
+            </div>
+            <div class="dishes_div" id="dessert_container"></div>
+        </section>
+
+    </main>
+
+    <!-- ПАНЕЛЬ (Sticky Bar) -->
+    <div class="bottom_bar" id="bottom_bar">
+        <div class="bottom_bar_text">Итого: <span id="total_price_bar">0</span>₽</div>
+        <a href="checkout.html" class="bottom_bar_btn" id="order_link">Перейти к оформлению</a>
+    </div>
+
+    <footer id="contacts" class="footer">
+        <p>Позвонить нам <a class="footer-link" href="tel:+70000000000">+7-000-000-00-00</a></p>
+    </footer>
+
+    <script src="order.js"></script>
+</body>
+</html>

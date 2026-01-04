@@ -4,10 +4,13 @@
 
 /* стили для всего текста на странице */
 body {
-    font-family: "Stack Sans Text", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
     color: #000;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 a {
@@ -33,17 +36,30 @@ a {
     margin-bottom: 30px;
 }
 
+.header_links {
+    display: flex;
+    gap: 15px; 
+    flex-wrap: wrap; 
+}
+
 .head_link {
-    margin-right: 25px; 
     color: #333;
     font-size: 16px;
 }
 
 .head_link:hover {
-    color: #e6492d;
+    color: tomato; 
+}
+
+.head_link.active {
+    color: tomato;
 }
 
 /* мейн */
+.main {
+    flex-grow: 1; 
+}
+
 .title {
     font-size: 28px;
     font-weight: 700;
@@ -86,17 +102,299 @@ a {
     font-weight: 700;
 }
 
+.dishes-table td:first-child {
+    color: #888;
+}
 
-/* футер*/
+/* футер */
 .footer {
-    margin-top: 40px;
     background-color: black;
     color: white;
     text-align: left; 
     padding: 30px;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .footer-link {
     color: white;
     text-decoration: none;
+}
+
+/* стили для контейнера фильтров */
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+/* стили для кнопок фильтров */
+.filter-btn {
+    background-color: transparent;
+    border: 1px solid #e6492d;
+    color: #e6492d;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: rgba(230, 73, 45, 0.1);
+}
+
+/* активная кнопка (когда фильтр включен) */
+.filter-btn.active {
+    background-color: #e6492d;
+    color: white;
+}
+
+/* стили для списка заказа */
+.order_item {
+    margin-bottom: 15px;
+}
+
+.order_item_title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #e6492d;
+    margin: 0 0 5px 0;
+}
+
+.order_item_info {
+    font-size: 14px;
+    margin: 0;
+    color: #000;
+}
+
+#nothing_selected {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Стили для sticky-панели (ЛР 8) */
+.bottom_bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    /* Скрыта по умолчанию */
+    display: none; 
+}
+
+.bottom_bar.visible {
+    display: flex;
+}
+
+.bottom_bar_text {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.bottom_bar_btn {
+    background-color: tomato;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.bottom_bar_btn:disabled, .bottom_bar_btn.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    pointer-events: none; /* чтобы ссылка не работала */
+}
+
+/* Кнопка "Удалить" в checkout.html */
+.dish_button.delete_btn {
+    background-color: #e6492d;
+    color: white;
+}
+
+.dish_button.delete_btn:hover {
+    background-color: #c43c23;
+}
+
+
+/* Таблица */
+.table-container {
+    overflow-x: auto; /* чтобы на мобилках скроллилась */
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    min-width: 600px; /* минимальная ширина чтобы не сплющивало */
+}
+
+.orders-table th, .orders-table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    vertical-align: top;
+}
+
+.orders-table th {
+    background-color: #f8f8f8;
+    font-weight: 700;
+}
+
+/* Кнопки действий в таблице (иконки) */
+.action-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 20px;
+    margin-right: 5px;
+    transition: transform 0.2s;
+}
+
+.action-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Модальные окна */
+.modal {
+    display: none; /* скрыты по умолчанию */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5); /* затемнение */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.open {
+    display: flex; /* показываем через flex для центровки */
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    width: 500px;
+    max-width: 90%;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close-btn:hover {
+    color: black;
+}
+
+.modal h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.delete_action_btn {
+    background-color: #e6492d;
+    color: white;
+}
+.delete_action_btn:hover {
+    background-color: #c43c23;
+}
+
+/* Стили для деталей заказа внутри модалки */
+.modal-row {
+    margin-bottom: 10px;
+}
+.modal-row strong {
+    display: inline-block;
+    width: 150px;
+}
+
+
+/* Скрываем форму на странице order.html, так как она переехала */
+/* Но стили нужны для checkout.html, поэтому просто не удаляем их из CSS */
+
+/* адаптивность */
+
+/* экран ≤800px главная страница */
+@media (max-width: 800px) {
+    .about-image {
+        width: 500px;
+    }
+    .header_links {
+        justify-content: space-between;
+    }
+}
+
+/* экран ≤600px главная страница */
+@media (max-width: 600px) {
+    .logo {
+        text-align: center;
+    }
+
+    .header_links {
+        flex-direction: column;
+        align-items: center; 
+        gap: 10px; 
+    }
+
+    .head_link {
+        font-size: 20px; 
+    }
+
+    .about-image {
+        width: 100%; 
+    }
+
+    .dishes-table {
+        font-size: 14px; 
+    }
+
+    .filters {
+        justify-content: center; /* центрируем кнопки на мобильных */
+    }
+    .bottom_bar {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+/* экран ≤400px главная страница */
+@media (max-width: 400px) {
+    .dishes-table {
+        font-size: 12px; 
+    }
 }
